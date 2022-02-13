@@ -1,0 +1,147 @@
+\documentclass[a4paper]{ctexrep}
+
+% --------- start of config ---------
+% 宏包引用
+\usepackage{listings}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+% 设置页边距
+\geometry{a4paper,left=2cm,right=2cm,top=1.5cm,bottom=1.5cm}
+% use url highlight
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+\urlstyle{same}
+% 行间距
+\renewcommand{\baselinestretch}{1.2}
+% 段间距
+\setlength{\parskip}{1em}
+% 设置图片文件夹
+\graphicspath{{./img/}}
+% 封面信息
+\title{Notes of <statistics for business and economics>}  % 文章标题
+\author{ZHEMIN CHEN}   % 作者的名称
+\date{February 9, 2021}   % 创建日期
+% --------- end of config ---------
+
+\begin{document}
+\maketitle
+\noindent
+Last edit: \today
+
+This is a concise notes for the book <statistics for business and economics>.
+
+\tableofcontents
+\clearpage
+
+\chapter{数值方法}
+本章包括位置、离散程度、形态和相关程度的数值度量。
+
+\section{位置的度量}
+
+\subsection{平均数}
+平均数(mean)提供了数据中心位置的度量。$\bar{x}$表示样本数据的平均值，$\mu$表示总体数据的
+平均值。平均值的数据位置描述容易受到极端值的影响。
+
+\textbf{样本平均数}
+\[\bar{x}=\frac{\sum x_{i}}{n}\]
+
+\textbf{总体平均数}
+\[\mu =\frac{\sum x_{i}}{N}\]
+
+\subsection{加权平均数}
+计算平均数时加入对每个观测值赋予显示其重要性的权重。
+
+\textbf{加权平均数}
+\[\bar{x}=\frac{\sum w_{i}x_{i}}{\sum w_{i}}\]
+式中，$w_{i}$是第$i$个观测值的权重。
+
+\subsection{中位数}
+中位数(median)是对数据中心位置的另一种度量。
+
+将数据按升序排列，
+
+（a）对奇数个观测值，中位数是中间的数值。
+
+（b）对偶数个观测值，中位数是中间两个数值的平均值。
+
+虽然在度量数据的中心位置时更加常用的是平均数，但是平均数往往会受到异常大或小的数值影响。在数据集
+含有异常值的情况下，中位数往往更加适合于度量数据的中心位置。
+
+\subsection{几何平均数}
+几何平均数（geometric mean）是一种位置的度量。经常用于分析财务数据的增长率。平均数只适合于加法
+过程。对于乘法过程，诸如增长率的应用，几何平均数是合适的位置度量。当你需要确定过去几个连续时期的
+平均变化率时，都能应用几何平均数。
+
+\textbf{几何平均数}
+\[\bar{x}_{g} = \sqrt[n]{x_{1}x_{2}\cdots x_{n}}\]
+
+
+\section{变异程度的度量}
+除了位置的度量以外，人们往往还需要考虑变异程度亦即离散程度的度量。
+
+\subsection{方差}
+方差（variance）是用所有数据对变异程度所做的一种度量。方差依赖于每个观测值$(x_{i})$与平均值
+之间的差异。
+
+如果数据来自总体，对于有N个观察值的总体，用$\mu$表示总体平均数，总体方差的定义如下：
+
+\[\sigma^{2}=\frac{\Sigma(x_{i}-\mu)^{2}}{N}\]
+
+大多数的统计应用需要分析样本数据。当计算样本方差时，更希望用它来估计总体方差$\sigma^{2}$.
+用$s^{2}$表示的n个样本数据的方差定义如下：
+
+\[s^{2} = \frac{\Sigma(x_{i} - \bar{x})^{2}}{n - 1}\]
+
+方差的平方单位使得人们对于方差的数值很难找到直观的理解和诠释。但是方差在比较两个或两个以上变量
+的变异程度时很有用。
+
+\subsection{标准差}
+定义标准差（standard deviation）为方差的正平方根：
+
+\[s = \sqrt{s^{2}}\]
+\[\sigma = \sqrt{\sigma^{2}}\]
+
+标准差和原始数据的单位相同，因此标准差更容易与平均数和其他与原始数据有相同测量单位的统计数据进行
+比较。
+
+\subsection{标准差系数}
+当对标准差相对于平均数大小的描述统计量感兴趣时，可以使用标准差系数（coefficient of variation）：
+
+\[(\frac{\mbox{标准差}}{\mbox{平均数}}\times 100)\%\]
+
+在比较具有不同标准差和不同平均数的变量的变异程度时，标准差系数是一个很有用的统计量。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
