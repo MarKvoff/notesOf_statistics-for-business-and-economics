@@ -6,6 +6,7 @@
 \usepackage{geometry}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{tcolorbox}
 
 % 设置页边距
 \geometry{a4paper,left=2cm,right=2cm,top=1.5cm,bottom=1.5cm}
@@ -81,9 +82,30 @@ This is a concise notes for the book <statistics for business and economics>.
 \textbf{几何平均数}
 \[\bar{x}_{g} = \sqrt[n]{x_{1}x_{2}\cdots x_{n}}\]
 
+\subsection{百分位数}
+提供了数据如何散布在从最小值与最大值的区间上的信息。对于包含$n$个观测值的数据集，第$p$百分位数将数据分割成为两个部分：
+大约有$p\%$的观测值比第$p$百分位数小；大约有$(100-p)\%$的观测值比第$p$百分位数大。
+
+将$n$个观测值从小到大排列，最小的在第1个位置，以此类推。$L_{p}$表示第$p$百分位数的位置，计算公式如下：
+\begin{tcolorbox}[title = {第$p$百分位数位置}]
+\[L_{p}=\frac{p}{100}(n+1)\]
+\end{tcolorbox}
+
+人们经常需要将数据分为四部分，每部分包含大约1/4的观测值。这些分割点称为四分位数：
+\begin{tcolorbox}[title = {四分位数}]
+$Q_{1}=$第一四分位数，或第25百分位数
+
+$Q_{2}=$第二四分位数，或第50百分位数（也是中位数）
+
+$Q_{3}=$第三四分位数，或第75百分位数
+\end{tcolorbox}
 
 \section{变异程度的度量}
 除了位置的度量以外，人们往往还需要考虑变异程度亦即离散程度的度量。
+
+\subsection{四分位数间距}
+四分位数间距（interquartile range，IQR）作为变异程度的一种度量，能够克服异常值的影响。
+它是$Q_{3}$与$Q_{1}$的差值，是中间50\%数据的极差。
 
 \subsection{方差}
 方差（variance）是用所有数据对变异程度所做的一种度量。方差依赖于每个观测值$(x_{i})$与平均值
@@ -141,10 +163,21 @@ z-分数的过程常常被称为z变换。
 与平均数的距离在$z$个标准差之内的数据值所占的比例至少为$(1-1/z^{2})$，其中$z$是大于1的任意实数。
 
 \subsection{经验法则}
-切比雪夫定理的优点之一是它适用于任何数据集而不论其数据分布的形状。
+切比雪夫定理的优点之一是它适用于任何数据集而不论其数据分布的形状。在实际应用中，大部分数据具有对称的峰形或钟形分布。
+当数据被认为近似于这种分布时就可以运用经验法则（empirical rule）来确定与平均数的距离在某个特定个数的标准差之内的
+数据值所占的比例。
+\begin{tcolorbox}[title = {经验法则}]
+对于具有钟形分布的数据：
+\tcblower
+$\bullet$大约68\%的数据值与平均数的距离在1个标准差之内。
+
+$\bullet$大约95\%的数据值与平均数的距离在2个标准差之内。
+
+$\bullet$几乎所有的数据值与平均数的距离在3个标准差之内。
+\end{tcolorbox}
 
 
-
+\section{两变量间关系的度量}
 
 
 
